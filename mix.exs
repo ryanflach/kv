@@ -28,6 +28,6 @@ defmodule KV.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    []
+    [{:plug, git: "git://github.com/elixir-lang/plug.git"}]
   end
 end
