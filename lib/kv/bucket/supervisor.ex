@@ -8,6 +8,10 @@ defmodule KV.Bucket.Supervisor do
     Supervisor.start_link(__MODULE__, :ok, name: @name)
   end
 
+  def start_bucket do
+    Supervisor.start_child(@name, [])
+  end
+
   def init(:ok) do
     children = [
       worker(KV.Bucket, [], restart: :temporary)
